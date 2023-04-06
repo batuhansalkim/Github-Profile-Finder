@@ -4,57 +4,79 @@ import './App.css';
 import Coin from './Coin';
 
 function App() {
-  const [coins, setCoins] = useState([]);
-  const [search, setSearch] = useState('');
+  const [coins,setCoins] = useState([]);
+  const [search,setSearch] = useState("");
 
-  useEffect(() => {
-    axios
-      .get(
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=150&page=1&sparkline=false'
-      )
-      .then(res => {
-        setCoins(res.data);
-        console.log(res.data);
-      })
-      .catch(error => console.log(error));
-  }, []);
+  useEffect(()=>{
+    axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=150&page=1&sparkline=false').then(res=>{
+      setCoins(res.data);
+    }).catch(error =>console.error(error))
+  },[]);
+  
+  const handleChange=e=>{
+    setSearch(e.target.value)
+  }
 
-  const handleChange = e => {
-    setSearch(e.target.value);
-  };
+  // const [coins, setCoins] = useState([]);
+  // const [search, setSearch] = useState('');
 
-  const filteredCoins = coins.filter(coin =>
-    coin.name.toLowerCase().includes(search.toLowerCase())
-  );
+  // useEffect(() => {
+  //   axios
+  //     .get(
+  //       'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=150&page=1&sparkline=false'
+  //     )
+  //     .then(res => {
+  //       setCoins(res.data);
+  //       console.log(res.data);
+  //     })
+  //     .catch(error => console.log(error));
+  // }, []);
+
+  // const handleChange = e => {
+  //   setSearch(e.target.value);
+  // };
+
+  // const filteredCoins = coins.filter(coin =>
+  //   coin.name.toLowerCase().includes(search.toLowerCase())
+  // );
 
   return (
-    <div className='coin-app'>
-      <div className='coin-search'>
-        <h1 className='coin-text'>Search a currency</h1>
+    <div className='cryptoapp'>
+      <div className='crypto-search'>
+        <h1 className='crypto-text'>Search a currency</h1>
         <form>
-          <input
-            className='coin-input'
-            type='text'
-            onChange={handleChange}
-            placeholder='Search'
-          />
+          <input onChange={handleChange} type="text" placeholder='Search' className='crypto-input' />
         </form>
       </div>
-      {filteredCoins.map(coin => {
-        return (
-          <Coin
-            key={coin.id}
-            name={coin.name}
-            price={coin.current_price}
-            symbol={coin.symbol}
-            marketcap={coin.total_volume}
-            volume={coin.market_cap}
-            image={coin.image}
-            priceChange={coin.price_change_percentage_24h}
-          />
-        );
-      })}
+      <Coin crypto={coins}/>
     </div>
+    // <div className='coin-app'>
+    //   <div className='coin-search'>
+    //     <h1 className='coin-text'>Search a currency</h1>
+    //     <form>
+    //       <input
+    //         className='coin-input'
+    //         type='text'
+    //         onChange={handleChange}
+    //         placeholder='Search'
+    //       />
+    //     </form>
+    //   </div>
+    //   {filteredCoins.map(coin => {
+    //     return (
+    //       <Coin
+    //         key={coin.id}
+    //         name={coin.name}
+    //         price={coin.current_price}
+    //         symbol={coin.symbol}
+    //         marketcap={coin.total_volume}
+    //         volume={coin.market_cap}
+    //         image={coin.image}
+    //         priceChange={coin.price_change_percentage_24h}
+    //       />
+    //     );
+    //   })}
+    // </div>
   );
 }
 
