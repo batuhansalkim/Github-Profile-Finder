@@ -7,8 +7,6 @@ const Coin = ({crypto}) => {
             <div className="crypto-row">
                 <div className="crypto">
                     <img src={crypto.image} alt="" />
-                    <h1>{crypto.name}</h1>
-                    <p>{crypto.symbol}</p>
                 </div>
             </div>
         </div>

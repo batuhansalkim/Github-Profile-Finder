@@ -12,10 +12,8 @@ function App() {
       setCoins(res.data);
     }).catch(error =>console.error(error))
   },[]);
-  
-  const handleChange=e=>{
-    setSearch(e.target.value)
-  }
+
+
 
   // const [coins, setCoins] = useState([]);
   // const [search, setSearch] = useState('');
@@ -45,7 +43,7 @@ function App() {
       <div className='crypto-search'>
         <h1 className='crypto-text'>Search a currency</h1>
         <form>
-          <input onChange={handleChange} type="text" placeholder='Search' className='crypto-input' />
+          <input type="text" placeholder='Search' className='crypto-input' />
         </form>
       </div>
       <Coin crypto={coins}/>
