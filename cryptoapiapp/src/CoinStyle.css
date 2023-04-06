@@ -1,8 +1,7 @@
-/* .coin-container {
+.coin-container {
   display: flex;
   justify-content: center;
 }
-
 .coin-row {
   display: flex;
   flex-direction: row;
@@ -12,7 +11,6 @@
   border-bottom: 1px solid #d7d7d7;
   width: 900px;
 }
-
 .coin {
   display: flex;
   align-items: center;
@@ -20,17 +18,24 @@
 
   min-width: 300px;
 }
-
 .coin h1 {
   font-size: 16px;
   width: 150px;
 }
-
 .coin img {
   height: 30px;
   width: 30px;
   margin-right: 10px;
 }
+/* 
+
+
+
+
+
+
+
+
 
 .coin-symbol {
   text-transform: uppercase;
