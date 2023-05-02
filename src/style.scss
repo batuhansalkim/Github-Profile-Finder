@@ -44,9 +44,31 @@
 
             button{
                 background-color: #7b96ec;
+                color: white;
+                padding: 10px;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+
             }
+            
+            label{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #8da4f1;
+                font-size: 13px;
+                cursor: pointer;
+            }
+            img {
+          width: 32px;
         }
-    
+        }
+        p {
+            color: #5d5b8d;
+            font-size: 12px;
+            margin-top: 10px;
+        }
     }
     
 }
