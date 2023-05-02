@@ -1,7 +1,9 @@
 export const Home =()=>{
     return(
-        <div>
-            Home
+        <div className="home">
+            <div className="container">
+                
+            </div>
         </div>
     )
 }
