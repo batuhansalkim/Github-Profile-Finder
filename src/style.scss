@@ -200,6 +200,25 @@
                 padding: 10px;
                 height: calc(100% - (100px));
                 //overflow: scroll;
+
+                .message{
+                    display: flex;
+                    gap: 20px;
+
+                    .messageInfo{
+                        img{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    }
+                    .messageContent{
+                        img{
+                            width: 50%;
+                        }
+                    }
+                }
             }
 
             .input{
@@ -229,12 +248,15 @@
                     align-items: center;
 
                     img{
-                        width: 20px;
+                        width: 24px;
+                        cursor: pointer;
                     }
 
                     button{
-                        padding:7px;
-
+                        padding:10px 15px ;
+                        color: white;
+                        background-color: #8da4f1;
+                        border: none;
                     }
                 }
             }
