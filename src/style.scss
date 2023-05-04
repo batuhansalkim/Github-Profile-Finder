@@ -199,13 +199,19 @@
                 background-color: #ddddf7;
                 padding: 10px;
                 height: calc(100% - (100px));
-                //overflow: scroll;
+                overflow: scroll;
 
                 .message{
                     display: flex;
                     gap: 20px;
+                    
 
                     .messageInfo{
+                        display: flex;
+                        flex-direction: column;
+                        color: gray;
+                        font-weight: 300;
+                        margin-bottom: 20px;
                         img{
                             width: 40px;
                             height: 40px;
