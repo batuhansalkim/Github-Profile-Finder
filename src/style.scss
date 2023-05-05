@@ -39,6 +39,7 @@
             color: #5d5b8d;
             font-weight: bold;
             font-size: 24px;
+            
         }
         .title{
             color: #363547;
@@ -103,11 +104,14 @@
         height: 80%;
         display: flex;
         overflow: hidden;
-
+        @include tablet{
+            width: 90%;
+        }
         .sidebar{
             flex: 1;
             //border-right: 1px solid black;
             background-color: #3e3c61;
+            position: relative;
 
             .navbar{
                 display: flex;
@@ -120,6 +124,9 @@
 
                 .logo{
                     font-weight: bold;
+                    @include tablet{
+                        display: none;
+                    }
                 }
 
                 .user{
@@ -140,6 +147,10 @@
                         font-size: 9px;
                         border: none;
                         cursor:pointer;
+                        @include tablet{
+                            position: absolute;
+                            bottom: 10px;
+                        }
                     }
                 }
             }
