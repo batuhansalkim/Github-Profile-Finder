@@ -33,16 +33,20 @@ function Register() {
             await updateProfile(res.user,{
               displayName,
               photoURL:downloadURL,
-            })
+            });
+            await setDoc(doc(db, "users", res.user.uid),{
+              uid:res.user.uid,
+              displayName,
+              email,
+              photoURL:downloadURL
+            });
+
+            await setDoc(doc(db, "userChats", res.user.uid), {});
           });
         }
       );
 
-      await setDoc(doc(db, "users", res.user.uid),{
-        displayName,
-        email,
-        photoURL:downloadURL
-      })
+      
 
     } catch (error) {
       setErr(true)
